@@ -1,0 +1,5 @@
+homepage: "https://github.com/ololabs/olo-serve-gtm-templates"
+documentation: "https://github.com/ololabs/olo-serve-gtm-templates/README.md"
+versions:
+  - sha: 5f02a788b90ae804f86b04aa24af8937e567874a
+    changeNotes: Initial release.
