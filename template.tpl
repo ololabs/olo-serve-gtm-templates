@@ -28,6 +28,8 @@ ___INFO___
 }
 
 
+
+
 ___TEMPLATE_PARAMETERS___
 
 [
@@ -45,7 +47,7 @@ ___TEMPLATE_PARAMETERS___
     "subParams": [
       {
         "type": "CHECKBOX",
-        "name": "addToCart",
+        "name": "v1.addToCart",
         "checkboxText": "Add to cart",
         "simpleValueType": true,
         "enablingConditions": [
@@ -58,7 +60,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "removeFromCart",
+        "name": "v1.removeFromCart",
         "checkboxText": "Remove from cart",
         "simpleValueType": true,
         "enablingConditions": [
@@ -71,7 +73,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "checkout",
+        "name": "v1.checkout",
         "checkboxText": "Checkout",
         "simpleValueType": true,
         "enablingConditions": [
@@ -84,7 +86,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "transactionLegacy",
+        "name": "v0.transaction",
         "checkboxText": "Transaction",
         "simpleValueType": true,
         "enablingConditions": [
@@ -97,7 +99,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "transaction",
+        "name": "v1.transaction",
         "checkboxText": "Transaction",
         "simpleValueType": true,
         "enablingConditions": [
@@ -110,7 +112,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "clickProductLink",
+        "name": "v1.clickProductLink",
         "checkboxText": "Click product link",
         "simpleValueType": true,
         "enablingConditions": [
@@ -137,7 +139,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "viewProductDetail",
+        "name": "v1.viewProductDetail",
         "checkboxText": "View product detail",
         "simpleValueType": true,
         "enablingConditions": [
@@ -164,7 +166,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "type": "CHECKBOX",
-        "name": "productsVisible",
+        "name": "v1.productsVisible",
         "checkboxText": "Product(s) visible",
         "simpleValueType": true,
         "enablingConditions": [
@@ -656,45 +658,46 @@ scenarios:
       assertApi('gtmOnSuccess').wasCalled();
     });
 - name: Add to cart
-  code: "test('it adds to cart', function(run) {\n  const t = run({addToCart: true});\n\
-    \n  t.callbacks.addToCart(mockProduct);\n\n  // Verify that the dataLayer received\
-    \ the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n    event: 'addToCart',\n\
-    \    ecommerce: {\n      currencyCode: 'USD',\n      add: {                  \
-    \              \n        products: [{                       \n          name:\
-    \ 'Test Product',\n          id: 1234,\n          price: 15.87,\n          quantity:\
-    \ 2\n        }]\n      }\n    }\n  });\n});"
+  code: "test('it adds to cart', function(run) {\n  const t = run({'v1.addToCart':\
+    \ true});\n\n  t.callbacks.addToCart(mockProduct);\n\n  // Verify that the dataLayer\
+    \ received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n    event:\
+    \ 'v1.addToCart',\n    ecommerce: {\n      currencyCode: 'USD',\n      add: {\
+    \                                \n        products: [{                      \
+    \ \n          name: 'Test Product',\n          id: 1234,\n          price: 15.87,\n\
+    \          quantity: 2\n        }]\n      }\n    }\n  });\n});"
 - name: Remove from cart
-  code: "test('it removes from cart', function(run) {\n  const t = run({removeFromCart:\
+  code: "test('it removes from cart', function(run) {\n  const t = run({'v1.removeFromCart':\
     \ true});\n\n  t.callbacks.removeFromCart(mockProduct);\n\n  // Verify that the\
     \ dataLayer received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n\
-    \    event: 'removeFromCart',\n    ecommerce: {\n      currencyCode: 'USD',\n\
+    \    event: 'v1.removeFromCart',\n    ecommerce: {\n      currencyCode: 'USD',\n\
     \      remove: {                                \n        products: [{       \
     \                \n          name: 'Test Product',\n          id: 1234,\n    \
     \      price: 15.87,\n          quantity: 2\n        }]\n      }\n    }\n  });\n\
     });"
 - name: Checkout
-  code: "test('it handles checkout', function(run) {\n  const t = run({checkout: true});\n\
-    \n  t.callbacks.checkout(mockBasket, noop);\n\n  // Verify that the dataLayer\
-    \ received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n    event:\
-    \ 'checkout',\n    ecommerce: {\n      checkout: {  \n        actionField: { step:\
-    \ 0 },\n        products: [{                       \n          name: 'Test Product',\n\
-    \          id: 1234,\n          price: 15.87,\n          quantity: 2\n       \
-    \ }]\n      },\n      eventCallback: noop\n    }\n  });\n});"
+  code: "test('it handles checkout', function(run) {\n  const t = run({'v1.checkout':\
+    \ true});\n\n  t.callbacks.checkout(mockBasket, noop);\n\n  // Verify that the\
+    \ dataLayer received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n\
+    \    event: 'v1.checkout',\n    ecommerce: {\n      checkout: {  \n        actionField:\
+    \ { step: 0 },\n        products: [{                       \n          name: 'Test\
+    \ Product',\n          id: 1234,\n          price: 15.87,\n          quantity:\
+    \ 2\n        }]\n      },\n      eventCallback: noop\n    }\n  });\n});"
 - name: Transaction
-  code: "test('it handles transaction', function(run) {\n  const t = run({transaction:\
-    \ true, enhanced: true});\n\n  t.callbacks.transaction(mockOrder, mockOrderSubmission);\n\
-    \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n\
-    \    event: 'transaction',\n    ecommerce: {\n      purchase: {  \n        actionField:\
-    \ {\n          id: 'asdf',\n          affiliation: 'Pickup',\n          revenue:\
-    \ 14.98,\n          tax: 0.72,\n          shipping: 5.99,\n          coupon: 'FREEBIE'\n\
-    \        },\n        products: [{\n          name: 'Test Product',\n         \
-    \ id: 1234,\n          price: 17.93,\n          quantity: 5\n        }, {\n  \
-    \        name: 'Test Product 2',\n          id: 1235,\n          price: 3.99,\n\
-    \          quantity: 1\n        }]\n      }\n    }\n  });\n});"
+  code: "test('it handles transaction', function(run) {\n  const t = run({'v1.transaction':\
+    \ true});\n\n  t.callbacks.transaction(mockOrder, mockOrderSubmission);\n\n  //\
+    \ Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n\
+    \    event: 'v1.transaction',\n    ecommerce: {\n      purchase: {  \n       \
+    \ actionField: {\n          id: 'asdf',\n          affiliation: 'Pickup',\n  \
+    \        revenue: 14.98,\n          tax: 0.72,\n          shipping: 5.99,\n  \
+    \        coupon: 'FREEBIE'\n        },\n        products: [{\n          name:\
+    \ 'Test Product',\n          id: 1234,\n          price: 17.93,\n          quantity:\
+    \ 5\n        }, {\n          name: 'Test Product 2',\n          id: 1235,\n  \
+    \        price: 3.99,\n          quantity: 1\n        }]\n      }\n    }\n  });\n\
+    });"
 - name: Transaction (Legacy)
   code: |-
     test('it handles legacy ecommerce transaction', function(run) {
-      const t = run({transactionLegacy: true});
+      const t = run({'v0.transaction': true});
 
       t.callbacks.transaction(mockOrder, mockOrderSubmission);
 
