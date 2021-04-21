@@ -341,7 +341,7 @@ oloOn('v1.transaction', function(order, orderSubmission) {
       purchase: {
         actionField: {
           id: order.displayId,
-          affiliation: order.deliveryMode,
+          affiliation: order.vendorName,
           revenue: order.subTotal,
           tax: order.vendorTax,
           shipping: order.deliveryCharge,
@@ -639,7 +639,7 @@ scenarios:
     \ true});\n\n  t.callbacks['v1.transaction'](mockOrder, mockOrderSubmission);\n\
     \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[0]).isEqualTo({\n\
     \    event: 'purchase',\n    ecommerce: {\n      purchase: {  \n        actionField:\
-    \ {\n          id: 'asdf',\n          affiliation: 'Pickup',\n          revenue:\
+    \ {\n          id: 'asdf',\n          affiliation: "Fake's Tavern",\n          revenue:\
     \ 14.98,\n          tax: 0.72,\n          shipping: 5.99,\n          coupon: 'FREEBIE'\n\
     \        },\n        products: [{\n          name: 'Test Product',\n         \
     \ id: 1234,\n          price: 17.93,\n          quantity: 5\n        }, {\n  \
