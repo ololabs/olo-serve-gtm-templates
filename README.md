@@ -6,7 +6,36 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 
 [Read more about Olo Serve's global data and events here.](#todo-bloomfire?)
 
-## Setup
+## Simple Setup
+
+The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve in Google Analytics. The configurations support either GA4 or Universal Analytics, and they are ideal for new GTM setups.
+
+If you are worried about importing a configuration conflicting with your existing GTM setup, follow one of the manual setup instructions below.
+
+TODO:
+(UA Template)
+(GA4 Template)
+(Can we import just parts?)
+
+## Manual Setup (GA4)
+
+### 1. Import the Olo Serve template
+
+To start using this template, import it from the Community Template Gallery.
+
+![Image of importing a tag template](./images/2-add-template-from-gallery.png)
+![Image of imported gallery tag template](./images/3-template-added.png)
+
+TODO: all the other steps
+
+Add the Serve Integration Tag
+Add web, iOS and Android variables
+Add triggers
+Add tags
+
+## Manual Setup (UA)
+
+TODO: call out changed event names here.
 
 ### 1. Import the Olo Serve template
 
@@ -17,7 +46,7 @@ To start using this template, import it from the Community Template Gallery.
 
 ### 2. Create a new tag
 
-Once the template has been added to your container, create a new tag that uses it. 
+Once the template has been added to your container, create a new tag that uses it.
 
 ![Image of empty tag list](./images/4-tag-list.png)
 ![Image of blank new tag](./images/5-add-tag.png)
@@ -45,7 +74,7 @@ In order to send data to Google Analytics (step #5), you first need to create a 
 
 ### 5. Create a Google Analytics tag
 
-The final step to pass data from Serve to Google Analytis is to create a GA tag that interacts directly with the data layer. [A full list of Enhanced Ecommerce activities and how to configure them is available here.](https://developers.google.com/tag-manager/enhanced-ecommerce) Pay close attention to the "+ See the Tag Configuration for the Example" button after each section. 
+The final step to pass data from Serve to Google Analytis is to create a GA tag that interacts directly with the data layer. [A full list of Enhanced Ecommerce activities and how to configure them is available here.](https://developers.google.com/tag-manager/enhanced-ecommerce) Pay close attention to the "+ See the Tag Configuration for the Example" button after each section.
 
 ![Image of configuring a Google Analytics tag](./images/17-create-ga-event-tag.png)
 ![Image of a configured Google Analytics tag](./images/18-set-ga-event-tag-trigger.png)
