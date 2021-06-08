@@ -8,8 +8,8 @@
         "containerVersionId": "0",
         "container": {
             "path": "",
-            "accountId": "",
-            "containerId": "",
+            "accountId": "0000000000",
+            "containerId": "0000000000",
             "name": "",
             "publicId": "",
             "usageContext": [
@@ -751,7 +751,124 @@
                 "parentFolderId": "21"
             }
         ],
-        "variable": [],
+        "variable": [
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "8",
+                "name": "Olo Serve - UA - Google Analytics Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": ""
+                    }
+                ],
+                "fingerprint": "1622643501748",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "18",
+                "name": "Olo Serve - Is Android App?",
+                "type": "j",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Olo.data.device.isHybridAndroid"
+                    }
+                ],
+                "fingerprint": "1622643382855",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "19",
+                "name": "Olo Serve - Is iOS App?",
+                "type": "j",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Olo.data.device.isHybridIOS"
+                    }
+                ],
+                "fingerprint": "1622643387595",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "20",
+                "name": "Olo Serve - Is Web App?",
+                "type": "j",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Olo.data.device.isHybrid"
+                    }
+                ],
+                "fingerprint": "1622643392157",
+                "parentFolderId": "21",
+                "formatValue": {
+                    "convertTrueToValue": {
+                        "type": "TEMPLATE",
+                        "value": "false"
+                    },
+                    "convertFalseToValue": {
+                        "type": "TEMPLATE",
+                        "value": "true"
+                    }
+                }
+            }
+        ],
         "folder": [
             {
                 "accountId": "0000000000",

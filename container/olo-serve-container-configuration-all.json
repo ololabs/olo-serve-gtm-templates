@@ -8,8 +8,8 @@
         "containerVersionId": "0",
         "container": {
             "path": "",
-            "accountId": "",
-            "containerId": "",
+            "accountId": "0000000000",
+            "containerId": "0000000000",
             "name": "",
             "publicId": "",
             "usageContext": [

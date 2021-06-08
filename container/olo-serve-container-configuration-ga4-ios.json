@@ -8,8 +8,8 @@
         "containerVersionId": "0",
         "container": {
             "path": "",
-            "accountId": "",
-            "containerId": "",
+            "accountId": "0000000000",
+            "containerId": "0000000000",
             "name": "",
             "publicId": "",
             "usageContext": [
@@ -838,7 +838,284 @@
                 "parentFolderId": "21"
             }
         ],
-        "variable": [],
+        "variable": [
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "15",
+                "name": "Olo Serve - GA4 - Ecommerce Items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.items"
+                    }
+                ],
+                "fingerprint": "1622643490340",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "18",
+                "name": "Olo Serve - Is Android App?",
+                "type": "j",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Olo.data.device.isHybridAndroid"
+                    }
+                ],
+                "fingerprint": "1622643382855",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "19",
+                "name": "Olo Serve - Is iOS App?",
+                "type": "j",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Olo.data.device.isHybridIOS"
+                    }
+                ],
+                "fingerprint": "1622643387595",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "20",
+                "name": "Olo Serve - Is Web App?",
+                "type": "j",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "Olo.data.device.isHybrid"
+                    }
+                ],
+                "fingerprint": "1622643392157",
+                "parentFolderId": "21",
+                "formatValue": {
+                    "convertTrueToValue": {
+                        "type": "TEMPLATE",
+                        "value": "false"
+                    },
+                    "convertFalseToValue": {
+                        "type": "TEMPLATE",
+                        "value": "true"
+                    }
+                }
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "28",
+                "name": "Olo Serve - GA4 - Ecommerce Transaction ID",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.transaction_id"
+                    }
+                ],
+                "fingerprint": "1622643490343",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "29",
+                "name": "Olo Serve - GA4 - Ecommerce Affiliation",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.affiliation"
+                    }
+                ],
+                "fingerprint": "1622643490342",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "30",
+                "name": "Olo Serve - GA4 - Ecommerce Value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.value"
+                    }
+                ],
+                "fingerprint": "1622643490345",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "31",
+                "name": "Olo Serve - GA4 - Ecommerce Tax",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.tax"
+                    }
+                ],
+                "fingerprint": "1622643490359",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "32",
+                "name": "Olo Serve - GA4 - Ecommerce Shipping",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.shipping"
+                    }
+                ],
+                "fingerprint": "1622643490358",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "33",
+                "name": "Olo Serve - GA4 - Ecommerce Currency",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.currency"
+                    }
+                ],
+                "fingerprint": "1622643490360",
+                "parentFolderId": "21",
+                "formatValue": {}
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "variableId": "34",
+                "name": "Olo Serve - GA4 - Ecommerce Coupon",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.coupon"
+                    }
+                ],
+                "fingerprint": "1622643490361",
+                "parentFolderId": "21",
+                "formatValue": {}
+            }
+        ],
         "folder": [
             {
                 "accountId": "0000000000",

@@ -1,25 +1,25 @@
 #!/usr/bin/env node
 const fs = require('fs');
-const util = require("util");
+const util = require('util');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
 function removeContainerInfo(json) {
     const removeVersionAndAccount = t => {
-        t.containerId = "0000000000";
-        t.accountId = "0000000000";
+        t.containerId = '0000000000';
+        t.accountId = '0000000000';
         return t;
     };
-    json.containerVersion.path = "";
-    json.containerVersion.accountId = "0000000000";
-    json.containerVersion.containerId = "0000000000";
-    json.containerVersion.tagManagerUrl = "";
-    json.containerVersion.container.path = "";
-    json.containerVersion.container.accountId = "";
-    json.containerVersion.container.containerId = "";
-    json.containerVersion.container.name = "";
-    json.containerVersion.container.publicId = "";
-    json.containerVersion.container.tagManagerUrl = "";
+    json.containerVersion.path = '';
+    json.containerVersion.accountId = '0000000000';
+    json.containerVersion.containerId = '0000000000';
+    json.containerVersion.tagManagerUrl = '';
+    json.containerVersion.container.path = '';
+    json.containerVersion.container.accountId = '0000000000';
+    json.containerVersion.container.containerId = '0000000000';
+    json.containerVersion.container.name = '';
+    json.containerVersion.container.publicId = '';
+    json.containerVersion.container.tagManagerUrl = '';
     json.containerVersion.tag = json.containerVersion.tag.map(removeVersionAndAccount);
     json.containerVersion.trigger = json.containerVersion.trigger.map(removeVersionAndAccount);
     json.containerVersion.variable = json.containerVersion.variable.map(removeVersionAndAccount);
@@ -41,7 +41,7 @@ function removeUAID(json) {
     const ga = json.containerVersion.variable.find(v => v.type === 'gas');
     if (ga) {
         const param = ga.parameter.find(p => p.key === 'trackingId');
-        if (param) param.value = "";
+        if (param) param.value = '';
     }
     return json;
 }
@@ -88,20 +88,20 @@ function filter(json, ...strs) {
     await writeContainer(filter(json, 'Olo Serve'), 'all');
 
     // GA4 All
-    await writeContainer(filter(json, '- GA4', 'Olo Serve - DOM Ready'), 'ga4-all');
+    await writeContainer(filter(json, '- GA4', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ga4-all');
     // GA4 Web
-    await writeContainer(filter(json, 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
+    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
     // GA4 iOS
-    await writeContainer(filter(json, 'Integration - GA4', 'Olo Serve - GA4 - iOS', 'Olo Serve - DOM Ready'), 'ga4-ios');
+    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - iOS', 'Olo Serve - DOM Ready'), 'ga4-ios');
     // GA4 Android
-    await writeContainer(filter(json, 'Integration - GA4', 'Olo Serve - GA4 - Android', 'Olo Serve - DOM Ready'), 'ga4-android');
+    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - Android', 'Olo Serve - DOM Ready'), 'ga4-android');
 
     // UA All
-    await writeContainer(filter(json, '- UA', 'Olo Serve - DOM Ready'), 'ua-all');
+    await writeContainer(filter(json, '- UA', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ua-all');
     // UA Web
-    await writeContainer(filter(json, 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
+    await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
     // UA iOS
-    await writeContainer(filter(json, 'Integration - UA', 'Olo Serve - UA - iOS', 'Olo Serve - DOM Ready'), 'ua-ios');
+    await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - iOS', 'Olo Serve - DOM Ready'), 'ua-ios');
     // UA Android
-    await writeContainer(filter(json, 'Integration - UA', 'Olo Serve - UA - Android', 'Olo Serve - DOM Ready'), 'ua-android');
+    await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - Android', 'Olo Serve - DOM Ready'), 'ua-android');
 })();
