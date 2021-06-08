@@ -22,45 +22,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "17",
-                "name": "Olo Serve - GA4 - Web - Track View Item List",
-                "type": "gaawe",
+                "tagId": "9",
+                "name": "Olo Serve - UA - Web - Track Add to Cart",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "view_item_list"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Add to Cart"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641699708",
+                "fingerprint": "1622641824560",
                 "firingTriggerId": [
-                    "16"
+                    "7"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -71,45 +80,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "52",
-                "name": "Olo Serve - GA4 - Web - Track View Item",
-                "type": "gaawe",
+                "tagId": "51",
+                "name": "Olo Serve Integration - UA",
+                "type": "cvt_36256118_3",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "v1.transaction",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "v1.clickProductLink",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "v1.removeFromCart",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "v1.viewProductDetail",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "v1.productsVisible",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "v1.addToCart",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "v1.checkout",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "view_item"
-                    },
-                    {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "key": "compat",
+                        "value": "ua"
                     }
                 ],
-                "fingerprint": "1622641695712",
+                "fingerprint": "1622641856445",
                 "firingTriggerId": [
-                    "23"
+                    "5"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -120,45 +138,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "53",
-                "name": "Olo Serve - GA4 - Web - Track Select Item",
-                "type": "gaawe",
+                "tagId": "77",
+                "name": "Olo Serve - UA - Web - Track Checkout",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "select_item"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Checkout"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641692205",
+                "fingerprint": "1622641829048",
                 "firingTriggerId": [
-                    "22"
+                    "61"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -169,45 +196,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "54",
-                "name": "Olo Serve - GA4 - Web - Track Remove from Cart",
-                "type": "gaawe",
+                "tagId": "78",
+                "name": "Olo Serve - UA - Web - Track Purchase",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "remove_from_cart"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641685483",
+                "fingerprint": "1622641844889",
                 "firingTriggerId": [
-                    "25"
+                    "62"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -218,45 +239,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "55",
-                "name": "Olo Serve - GA4 - Web - Track Add to Cart",
-                "type": "gaawe",
+                "tagId": "79",
+                "name": "Olo Serve - UA - Web - Track Detail",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "add_to_cart"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641673428",
+                "fingerprint": "1622641832818",
                 "firingTriggerId": [
-                    "24"
+                    "60"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -267,150 +282,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "56",
-                "name": "Olo Serve - GA4 - Web - Track Purchase",
-                "type": "gaawe",
+                "tagId": "80",
+                "name": "Olo Serve - UA - Web - Track Impressions",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "purchase"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "transaction_id"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Transaction ID}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "affiliation"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Affiliation}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "value"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Value}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "tax"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Tax}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "shipping"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Shipping}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "currency"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Currency}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "coupon"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Coupon}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641681097",
+                "fingerprint": "1622641836308",
                 "firingTriggerId": [
-                    "27"
+                    "12"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -421,45 +325,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "57",
-                "name": "Olo Serve - GA4 - Web - Track Checkout",
-                "type": "gaawe",
+                "tagId": "81",
+                "name": "Olo Serve - UA - Web - Track Product Click",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "begin_checkout"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Product Click"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641677339",
+                "fingerprint": "1622641840618",
                 "firingTriggerId": [
-                    "26"
+                    "59"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -470,45 +383,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "98",
-                "name": "Olo Serve - GA4 - iOS - Track Add to Cart",
-                "type": "gaawe",
+                "tagId": "82",
+                "name": "Olo Serve - UA - Web - Track Remove from Cart",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "add_to_cart"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Remove from Cart"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641643767",
+                "fingerprint": "1622641849190",
                 "firingTriggerId": [
-                    "37"
+                    "58"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -519,45 +441,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "99",
-                "name": "Olo Serve - GA4 - iOS - Track Checkout",
-                "type": "gaawe",
+                "tagId": "84",
+                "name": "Olo Serve - UA - iOS - Track Add to Cart",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "begin_checkout"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Add to Cart"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641647602",
+                "fingerprint": "1622641792597",
                 "firingTriggerId": [
-                    "38"
+                    "63"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -568,150 +499,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "100",
-                "name": "Olo Serve - GA4 - iOS - Track Purchase",
-                "type": "gaawe",
+                "tagId": "85",
+                "name": "Olo Serve - UA - iOS - Track Checkout",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "purchase"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "transaction_id"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Transaction ID}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "affiliation"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Affiliation}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "value"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Value}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "tax"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Tax}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "shipping"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Shipping}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "currency"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Currency}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "coupon"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Coupon}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Checkout"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641651371",
+                "fingerprint": "1622641795850",
                 "firingTriggerId": [
-                    "39"
+                    "64"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -722,45 +557,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "101",
-                "name": "Olo Serve - GA4 - iOS - Track Remove from Cart",
-                "type": "gaawe",
+                "tagId": "86",
+                "name": "Olo Serve - UA - iOS - Track Detail",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "remove_from_cart"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641655222",
+                "fingerprint": "1622641799391",
                 "firingTriggerId": [
-                    "40"
+                    "65"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -771,45 +600,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "102",
-                "name": "Olo Serve - GA4 - iOS - Track Select Item",
-                "type": "gaawe",
+                "tagId": "87",
+                "name": "Olo Serve - UA - iOS - Track Impressions",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "select_item"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641662109",
+                "fingerprint": "1622641803763",
                 "firingTriggerId": [
-                    "41"
+                    "66"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -820,45 +643,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "103",
-                "name": "Olo Serve - GA4 - iOS - Track View Item",
-                "type": "gaawe",
+                "tagId": "88",
+                "name": "Olo Serve - UA - iOS - Track Product Click",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "view_item"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Product Click"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641665720",
+                "fingerprint": "1622641812143",
                 "firingTriggerId": [
-                    "42"
+                    "67"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -869,45 +701,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "104",
-                "name": "Olo Serve - GA4 - iOS - Track View Item List",
-                "type": "gaawe",
+                "tagId": "89",
+                "name": "Olo Serve - UA - iOS - Track Purchase",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "view_item_list"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641669945",
+                "fingerprint": "1622641816044",
                 "firingTriggerId": [
-                    "43"
+                    "68"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -918,45 +744,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "105",
-                "name": "Olo Serve - GA4 - Android - Track Add to Cart",
-                "type": "gaawe",
+                "tagId": "90",
+                "name": "Olo Serve - UA - iOS - Track Remove from Cart",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "add_to_cart"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Remove from Cart"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641592989",
+                "fingerprint": "1622641820075",
                 "firingTriggerId": [
-                    "44"
+                    "69"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -967,45 +802,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "106",
-                "name": "Olo Serve - GA4 - Android - Track Checkout",
-                "type": "gaawe",
+                "tagId": "91",
+                "name": "Olo Serve - UA - Android - Track Add to Cart",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "begin_checkout"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Add to Cart"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641597998",
+                "fingerprint": "1622641704752",
                 "firingTriggerId": [
-                    "45"
+                    "70"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -1016,150 +860,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "107",
-                "name": "Olo Serve - GA4 - Android - Track Purchase",
-                "type": "gaawe",
+                "tagId": "92",
+                "name": "Olo Serve - UA - Android - Track Checkout",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "purchase"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "transaction_id"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Transaction ID}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "affiliation"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Affiliation}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "value"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Value}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "tax"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Tax}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "shipping"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Shipping}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "currency"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Currency}}"
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "coupon"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Coupon}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Checkout"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641602491",
+                "fingerprint": "1622641710355",
                 "firingTriggerId": [
-                    "46"
+                    "71"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -1170,45 +918,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "108",
-                "name": "Olo Serve - GA4 - Android - Track Remove from Cart",
-                "type": "gaawe",
+                "tagId": "93",
+                "name": "Olo Serve - UA - Android - Track Detail",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "remove_from_cart"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641607033",
+                "fingerprint": "1622641719370",
                 "firingTriggerId": [
-                    "47"
+                    "72"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -1219,45 +961,39 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "109",
-                "name": "Olo Serve - GA4 - Android - Track Select Item",
-                "type": "gaawe",
+                "tagId": "94",
+                "name": "Olo Serve - UA - Android - Track Impressions",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "select_item"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641613231",
+                "fingerprint": "1622641771869",
                 "firingTriggerId": [
-                    "48"
+                    "73"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -1268,45 +1004,54 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "110",
-                "name": "Olo Serve - GA4 - Android - Track View Item",
-                "type": "gaawe",
+                "tagId": "95",
+                "name": "Olo Serve - UA - Android - Track Product Click",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "view_item"
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Product Click"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641636220",
+                "fingerprint": "1622641780532",
                 "firingTriggerId": [
-                    "49"
+                    "74"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -1317,45 +1062,97 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "tagId": "111",
-                "name": "Olo Serve - GA4 - Android - Track View Item List",
-                "type": "gaawe",
+                "tagId": "96",
+                "name": "Olo Serve - UA - Android - Track Purchase",
+                "type": "ua",
                 "parameter": [
                     {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
                         "type": "TEMPLATE",
-                        "key": "eventName",
-                        "value": "view_item_list"
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
                     },
                     {
-                        "type": "LIST",
-                        "key": "eventParameters",
-                        "list": [
-                            {
-                                "type": "MAP",
-                                "map": [
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "name",
-                                        "value": "items"
-                                    },
-                                    {
-                                        "type": "TEMPLATE",
-                                        "key": "value",
-                                        "value": "{{Olo Serve - GA4 - Ecommerce Items}}"
-                                    }
-                                ]
-                            }
-                        ]
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
                     },
                     {
-                        "type": "TAG_REFERENCE",
-                        "key": "measurementId",
-                        "value": "GA4"
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
                     }
                 ],
-                "fingerprint": "1622641640179",
+                "fingerprint": "1622641784975",
                 "firingTriggerId": [
-                    "50"
+                    "75"
+                ],
+                "parentFolderId": "21",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "tagId": "97",
+                "name": "Olo Serve - UA - Android - Track Remove from Cart",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "Ecommerce"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{Olo Serve - UA - Google Analytics Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "Remove from Cart"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1622641788804",
+                "firingTriggerId": [
+                    "76"
                 ],
                 "parentFolderId": "21",
                 "tagFiringOption": "ONCE_PER_EVENT",
@@ -1377,8 +1174,8 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "16",
-                "name": "Olo Serve - GA4 - Web - View Item List",
+                "triggerId": "7",
+                "name": "Olo Serve - UA - Web - Add to Cart Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1392,7 +1189,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "view_item_list"
+                                "value": "addToCart"
                             }
                         ]
                     }
@@ -1414,14 +1211,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642035619",
+                "fingerprint": "1622642096332",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "22",
-                "name": "Olo Serve - GA4 - Web - Select Item",
+                "triggerId": "12",
+                "name": "Olo Serve - UA - Web - Impressions Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1435,7 +1232,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "select_item"
+                                "value": "impressions"
                             }
                         ]
                     }
@@ -1457,14 +1254,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642028168",
+                "fingerprint": "1622642107998",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "23",
-                "name": "Olo Serve - GA4 - Web - View Item",
+                "triggerId": "58",
+                "name": "Olo Serve - UA - Web - Remove from Cart Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1478,7 +1275,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "view_item"
+                                "value": "removeFromCart"
                             }
                         ]
                     }
@@ -1500,14 +1297,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642031395",
+                "fingerprint": "1622642189028",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "24",
-                "name": "Olo Serve - GA4 - Web - Add to Cart",
+                "triggerId": "59",
+                "name": "Olo Serve - UA - Web - Product Click Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1521,7 +1318,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "add_to_cart"
+                                "value": "productClick"
                             }
                         ]
                     }
@@ -1543,14 +1340,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642013355",
+                "fingerprint": "1622642113327",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "25",
-                "name": "Olo Serve - GA4 - Web - Remove from Cart",
+                "triggerId": "60",
+                "name": "Olo Serve - UA - Web - Detail Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1564,7 +1361,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "remove_from_cart"
+                                "value": "detail"
                             }
                         ]
                     }
@@ -1586,14 +1383,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642023691",
+                "fingerprint": "1622642104283",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "26",
-                "name": "Olo Serve - GA4 - Web - Checkout",
+                "triggerId": "61",
+                "name": "Olo Serve - UA - Web - Checkout Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1607,7 +1404,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "begin_checkout"
+                                "value": "checkout"
                             }
                         ]
                     }
@@ -1629,14 +1426,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642016798",
+                "fingerprint": "1622642100539",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "27",
-                "name": "Olo Serve - GA4 - Web - Purchase",
+                "triggerId": "62",
+                "name": "Olo Serve - UA - Web - Purchase Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1672,14 +1469,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622642020213",
+                "fingerprint": "1622642175756",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "37",
-                "name": "Olo Serve - GA4 - iOS - Add to Cart",
+                "triggerId": "63",
+                "name": "Olo Serve - UA - iOS - Add to Cart Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1693,7 +1490,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "add_to_cart"
+                                "value": "addToCart"
                             }
                         ]
                     }
@@ -1715,14 +1512,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641921228",
+                "fingerprint": "1622642068019",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "38",
-                "name": "Olo Serve - GA4 - iOS - Checkout",
+                "triggerId": "64",
+                "name": "Olo Serve - UA - iOS - Checkout Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1736,7 +1533,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "begin_checkout"
+                                "value": "checkout"
                             }
                         ]
                     }
@@ -1758,14 +1555,143 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641927604",
+                "fingerprint": "1622642073731",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "39",
-                "name": "Olo Serve - GA4 - iOS - Purchase",
+                "triggerId": "65",
+                "name": "Olo Serve - UA - iOS - Detail Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "detail"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Olo Serve - Is iOS App?}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1622642077128",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "triggerId": "66",
+                "name": "Olo Serve - UA - iOS - Impressions Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "impressions"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Olo Serve - Is iOS App?}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1622642081411",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "triggerId": "67",
+                "name": "Olo Serve - UA - iOS - Product Click Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "productClick"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Olo Serve - Is iOS App?}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1622642085345",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "triggerId": "68",
+                "name": "Olo Serve - UA - iOS - Purchase Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1801,14 +1727,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641931488",
+                "fingerprint": "1622642088874",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "40",
-                "name": "Olo Serve - GA4 - iOS - Remove from Cart",
+                "triggerId": "69",
+                "name": "Olo Serve - UA - iOS - Remove from Cart Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1822,7 +1748,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "remove_from_cart"
+                                "value": "removeFromCart"
                             }
                         ]
                     }
@@ -1844,14 +1770,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641935241",
+                "fingerprint": "1622642092914",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "41",
-                "name": "Olo Serve - GA4 - iOS - Select Item",
+                "triggerId": "70",
+                "name": "Olo Serve - UA - Android - Add to Cart Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -1865,136 +1791,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "select_item"
-                            }
-                        ]
-                    }
-                ],
-                "filter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Olo Serve - Is iOS App?}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1622641940418",
-                "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "triggerId": "42",
-                "name": "Olo Serve - GA4 - iOS - View Item",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "view_item"
-                            }
-                        ]
-                    }
-                ],
-                "filter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Olo Serve - Is iOS App?}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1622642005833",
-                "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "triggerId": "43",
-                "name": "Olo Serve - GA4 - iOS - View Item List",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "view_item_list"
-                            }
-                        ]
-                    }
-                ],
-                "filter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Olo Serve - Is iOS App?}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1622642009629",
-                "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "triggerId": "44",
-                "name": "Olo Serve - GA4 - Android - Add to Cart",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "add_to_cart"
+                                "value": "addToCart"
                             }
                         ]
                     }
@@ -2016,14 +1813,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641891375",
+                "fingerprint": "1622642040877",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "45",
-                "name": "Olo Serve - GA4 - Android - Checkout",
+                "triggerId": "71",
+                "name": "Olo Serve - UA - Android - Checkout Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -2037,7 +1834,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "begin_checkout"
+                                "value": "checkout"
                             }
                         ]
                     }
@@ -2059,14 +1856,143 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641894862",
+                "fingerprint": "1622642045000",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "46",
-                "name": "Olo Serve - GA4 - Android - Purchase",
+                "triggerId": "72",
+                "name": "Olo Serve - UA - Android - Detail Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "detail"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Olo Serve - Is Android App?}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1622642049870",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "triggerId": "73",
+                "name": "Olo Serve - UA - Android - Impressions Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "impressions"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Olo Serve - Is Android App?}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1622642054012",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "triggerId": "74",
+                "name": "Olo Serve - UA - Android - Product Click Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "productClick"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Olo Serve - Is Android App?}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1622642057139",
+                "parentFolderId": "21"
+            },
+            {
+                "accountId": "0000000000",
+                "containerId": "0000000000",
+                "triggerId": "75",
+                "name": "Olo Serve - UA - Android - Purchase Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -2102,14 +2028,14 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641897918",
+                "fingerprint": "1622642060716",
                 "parentFolderId": "21"
             },
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "triggerId": "47",
-                "name": "Olo Serve - GA4 - Android - Remove from Cart",
+                "triggerId": "76",
+                "name": "Olo Serve - UA - Android - Remove from Cart Event",
                 "type": "CUSTOM_EVENT",
                 "customEventFilter": [
                     {
@@ -2123,7 +2049,7 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "remove_from_cart"
+                                "value": "removeFromCart"
                             }
                         ]
                     }
@@ -2145,136 +2071,7 @@
                         ]
                     }
                 ],
-                "fingerprint": "1622641904917",
-                "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "triggerId": "48",
-                "name": "Olo Serve - GA4 - Android - Select Item",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "select_item"
-                            }
-                        ]
-                    }
-                ],
-                "filter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Olo Serve - Is Android App?}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1622641911480",
-                "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "triggerId": "49",
-                "name": "Olo Serve - GA4 - Android - View Item",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "view_item"
-                            }
-                        ]
-                    }
-                ],
-                "filter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Olo Serve - Is Android App?}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1622641914607",
-                "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "triggerId": "50",
-                "name": "Olo Serve - GA4 - Android - View Item List",
-                "type": "CUSTOM_EVENT",
-                "customEventFilter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{_event}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "view_item_list"
-                            }
-                        ]
-                    }
-                ],
-                "filter": [
-                    {
-                        "type": "EQUALS",
-                        "parameter": [
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg0",
-                                "value": "{{Olo Serve - Is Android App?}}"
-                            },
-                            {
-                                "type": "TEMPLATE",
-                                "key": "arg1",
-                                "value": "true"
-                            }
-                        ]
-                    }
-                ],
-                "fingerprint": "1622641918015",
+                "fingerprint": "1622642064177",
                 "parentFolderId": "21"
             }
         ],
@@ -2282,218 +2079,58 @@
             {
                 "accountId": "0000000000",
                 "containerId": "0000000000",
-                "variableId": "15",
-                "name": "Olo Serve - GA4 - Ecommerce Items",
-                "type": "v",
+                "variableId": "8",
+                "name": "Olo Serve - UA - Google Analytics Settings",
+                "type": "gas",
                 "parameter": [
                     {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
                     },
                     {
                         "type": "BOOLEAN",
-                        "key": "setDefaultValue",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
                         "value": "false"
                     },
                     {
                         "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.items"
+                        "key": "trackingId",
+                        "value": ""
                     }
                 ],
-                "fingerprint": "1622643490340",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "28",
-                "name": "Olo Serve - GA4 - Ecommerce Transaction ID",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.transaction_id"
-                    }
-                ],
-                "fingerprint": "1622643490343",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "29",
-                "name": "Olo Serve - GA4 - Ecommerce Affiliation",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.affiliation"
-                    }
-                ],
-                "fingerprint": "1622643490342",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "30",
-                "name": "Olo Serve - GA4 - Ecommerce Value",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.value"
-                    }
-                ],
-                "fingerprint": "1622643490345",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "31",
-                "name": "Olo Serve - GA4 - Ecommerce Tax",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.tax"
-                    }
-                ],
-                "fingerprint": "1622643490359",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "32",
-                "name": "Olo Serve - GA4 - Ecommerce Shipping",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.shipping"
-                    }
-                ],
-                "fingerprint": "1622643490358",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "33",
-                "name": "Olo Serve - GA4 - Ecommerce Currency",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.currency"
-                    }
-                ],
-                "fingerprint": "1622643490360",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "34",
-                "name": "Olo Serve - GA4 - Ecommerce Coupon",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "ecommerce.coupon"
-                    }
-                ],
-                "fingerprint": "1622643490361",
-                "parentFolderId": "21",
-                "formatValue": {}
+                "fingerprint": "1622643501748",
+                "parentFolderId": "21"
             }
         ],
         "folder": [

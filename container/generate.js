@@ -37,6 +37,15 @@ function removeFolders(json) {
     return json;
 }
 
+function removeUAID(json) {
+    const ga = json.containerVersion.variable.find(v => v.type === 'gas');
+    if (ga) {
+        const param = ga.parameter.find(p => p.key === 'trackingId');
+        if (param) param.value = "";
+    }
+    return json;
+}
+
 async function writeContainer(json, path) {
     path = `olo-serve-container-configuration-${path}.json`;
     await writeFile(path, JSON.stringify(json, null, 4));
@@ -72,11 +81,14 @@ function filter(json, ...strs) {
     // Remove non-Serve folders
     json = removeFolders(json, 'Olo Serve');
 
+    // Remove UA IDs
+    json = removeUAID(json);
+
     // All
     await writeContainer(filter(json, 'Olo Serve'), 'all');
 
     // GA4 All
-    await writeContainer(filter(json, 'Olo Serve - GA4', 'Olo Serve - DOM Ready'), 'ga4-all');
+    await writeContainer(filter(json, '- GA4', 'Olo Serve - DOM Ready'), 'ga4-all');
     // GA4 Web
     await writeContainer(filter(json, 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
     // GA4 iOS
@@ -85,7 +97,7 @@ function filter(json, ...strs) {
     await writeContainer(filter(json, 'Integration - GA4', 'Olo Serve - GA4 - Android', 'Olo Serve - DOM Ready'), 'ga4-android');
 
     // UA All
-    await writeContainer(filter(json, 'Olo Serve - UA', 'Olo Serve - DOM Ready'), 'ua-all');
+    await writeContainer(filter(json, '- UA', 'Olo Serve - DOM Ready'), 'ua-all');
     // UA Web
     await writeContainer(filter(json, 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
     // UA iOS
