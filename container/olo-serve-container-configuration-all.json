@@ -4431,7 +4431,7 @@
                     {
                         "type": "TEMPLATE",
                         "key": "trackingId",
-                        "value": ""
+                        "value": "UA-000000-0"
                     }
                 ],
                 "fingerprint": "1622643501748",

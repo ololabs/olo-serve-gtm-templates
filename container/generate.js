@@ -41,7 +41,7 @@ function removeUAID(json) {
     const ga = json.containerVersion.variable.find(v => v.type === 'gas');
     if (ga) {
         const param = ga.parameter.find(p => p.key === 'trackingId');
-        if (param) param.value = '';
+        if (param) param.value = 'UA-000000-0';
     }
     return json;
 }
@@ -52,15 +52,15 @@ async function writeContainer(json, path) {
 }
 
 function includesAny(str, arr) {
-    return !!arr.find(a => str.includes(a));
+    return arr.some(a => str.includes(a));
 }
 
 function filter(json, ...strs) {
-    json = JSON.parse(JSON.stringify(json));
-    json.containerVersion.tag = json.containerVersion.tag.filter(tag => includesAny(tag.name, strs));
-    json.containerVersion.trigger = json.containerVersion.trigger.filter(trigger => includesAny(trigger.name, strs));
-    json.containerVersion.variable = json.containerVersion.variable.filter(variable => includesAny(variable.name, strs));
-    return json;
+    const clone = JSON.parse(JSON.stringify(json));
+    clone.containerVersion.tag = clone.containerVersion.tag.filter(tag => includesAny(tag.name, strs));
+    clone.containerVersion.trigger = clone.containerVersion.trigger.filter(trigger => includesAny(trigger.name, strs));
+    clone.containerVersion.variable = clone.containerVersion.variable.filter(variable => includesAny(variable.name, strs));
+    return clone;
 }
 
 (async function main() {
@@ -90,7 +90,7 @@ function filter(json, ...strs) {
     // GA4 All
     await writeContainer(filter(json, '- GA4', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ga4-all');
     // GA4 Web
-    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
+    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
     // GA4 iOS
     await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - iOS', 'Olo Serve - DOM Ready'), 'ga4-ios');
     // GA4 Android
@@ -99,7 +99,7 @@ function filter(json, ...strs) {
     // UA All
     await writeContainer(filter(json, '- UA', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ua-all');
     // UA Web
-    await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
+    await writeContainer(filter(json, 'UA - Google Analytics', 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
     // UA iOS
     await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - iOS', 'Olo Serve - DOM Ready'), 'ua-ios');
     // UA Android

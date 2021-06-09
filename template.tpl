@@ -53,7 +53,7 @@ ___TEMPLATE_PARAMETERS___
     ],
     "simpleValueType": true,
     "help": "Which version of Google Analytics will be integrated with?",
-    "defaultValue": "ua"
+    "defaultValue": "ga4"
   },
   {
     "type": "GROUP",
@@ -408,7 +408,13 @@ function mapRemoveFromCartToDataLayer(product) {
 
 function mapCheckoutToDataLayer(basket, cb) {
   if (isGa4()) {
-    callLater(cb); // gross side effect but GA4 doesn't use this callback and Serve needs it run ASAP
+    // Serve exposes a "done" callback because UA depends on it
+    // The idea is that the page shouldn't transition until the analytics
+    // are done running. You can see below how UA consumes this.
+    // GA4 doesn't have an `eventCallback` parameter, but we want
+    // to let Serve know we are done doing our tracking and it can
+    // move along ASAP. `callLater` is the same as `setTimeout(0)`.
+    callLater(cb);
     return {
       event: 'begin_checkout',
       ecommerce: {

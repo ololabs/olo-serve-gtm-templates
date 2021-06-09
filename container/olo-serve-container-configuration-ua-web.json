@@ -802,71 +802,11 @@
                     {
                         "type": "TEMPLATE",
                         "key": "trackingId",
-                        "value": ""
+                        "value": "UA-000000-0"
                     }
                 ],
                 "fingerprint": "1622643501748",
                 "parentFolderId": "21"
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "18",
-                "name": "Olo Serve - Is Android App?",
-                "type": "j",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "Olo.data.device.isHybridAndroid"
-                    }
-                ],
-                "fingerprint": "1622643382855",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "19",
-                "name": "Olo Serve - Is iOS App?",
-                "type": "j",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "Olo.data.device.isHybridIOS"
-                    }
-                ],
-                "fingerprint": "1622643387595",
-                "parentFolderId": "21",
-                "formatValue": {}
-            },
-            {
-                "accountId": "0000000000",
-                "containerId": "0000000000",
-                "variableId": "20",
-                "name": "Olo Serve - Is Web App?",
-                "type": "j",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "Olo.data.device.isHybrid"
-                    }
-                ],
-                "fingerprint": "1622643392157",
-                "parentFolderId": "21",
-                "formatValue": {
-                    "convertTrueToValue": {
-                        "type": "TEMPLATE",
-                        "value": "false"
-                    },
-                    "convertFalseToValue": {
-                        "type": "TEMPLATE",
-                        "value": "true"
-                    }
-                }
             }
         ],
         "folder": [
