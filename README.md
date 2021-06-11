@@ -209,3 +209,9 @@ os_update | _Not Supported_
 screen_view | Listen for pageview changes with GTM
 session_start | _Not Supported_
 User | _Not Supported_
+
+## Adding Serve Mobile Tracking
+
+If you use these templates for integrating tracking into Serve web today, the simplest path to adding support for Serve Mobile is to remove all existing tags, triggers and templates related to older versions of these instructions and import one of the container configurations above.
+
+If that is not an option, the best place to start is [adding platform variables](#3-add-platform-variables-optional), filtering existing tags to only apply to Serve web, and then adding additional triggers and tags for each Serve Mobile platform.
