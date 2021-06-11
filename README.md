@@ -26,7 +26,7 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 
 ## Simple Setup
 
-The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups, and they support either GA4 or Universal Analytics. Additionally, they can be used to configure Serve Mobile analytics for iOS and Android.
+The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups, and they support either GA4 or Universal Analytics. Additionally, they can be used to configure Serve App analytics for iOS and Android.
 
 If you are worried about importing a configuration conflicting with your existing GTM setup, follow one of the manual setup instructions below.
 
@@ -37,7 +37,7 @@ To import a container configuration, open your GTM container and navigate to the
 ![GTM Workspace Overview](./images/simple/1.1-start.png)
 ![GTM Admin](./images/simple/1.2-admin.png)
 
-Select one of the JSON configuration [downloaded from our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/container) that best suits your needs. In most cases, this will be `olo-serve-container-configuration-ga4-web.json` as it leverages GA4 and only contains tracking for Serve web. If you are using Serve Mobile for apps, you downloading `olo-serve-container-configuration-ga4-all.json` would be a better choice.
+Select one of the JSON configuration [downloaded from our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/container) that best suits your needs. In most cases, this will be `olo-serve-container-configuration-ga4-web.json` as it leverages GA4 and only contains tracking for Serve web. If you are using Serve App for apps, you downloading `olo-serve-container-configuration-ga4-all.json` would be a better choice.
 
 You can choose which workspace to import the configuration to, and whether or not to merge or overwrite existing tags.
 
@@ -121,7 +121,7 @@ This only supports the transaction event and is only included for backwards comp
 
 ### 3. Add platform variables (optional)
 
-If you want to track Serve web and Serve Mobile events separately, you need to route data from GTM to more than one Google Analytics account. This is covered in more detail under [Add Tags](#5-add-tags), but a prerequisite is to add variables to differentiate between platform. These variables key off device information exposed by Serve.
+If you want to track Serve web and Serve App events separately, you need to route data from GTM to more than one Google Analytics account. This is covered in more detail under [Add Tags](#5-add-tags), but a prerequisite is to add variables to differentiate between platform. These variables key off device information exposed by Serve.
 
 ![GTM variables](./images/manual/3.1.png)
 
@@ -137,9 +137,9 @@ Before you add tags for sending data to GA, you need to add triggers that will b
 ![Choose trigger type](./images/manual/4.2.png)
 ![Configure custom event](./images/manual/4.3.png)
 
-#### 4a. Serve Mobile
+#### 4a. Serve App
 
-If you are using Serve Mobile, you need to differentiate between data from the web and iOS/Android apps. To achieve this, you must define the conditions for when to fire a tag.
+If you are using Serve App, you need to differentiate between data from the web and iOS/Android apps. To achieve this, you must define the conditions for when to fire a tag.
 
 ![Configure custom event for Android](./images/manual/4.4.png)
 
@@ -187,7 +187,7 @@ impressions | [A product becomes visible on the screen.](https://developers.goog
 
 ## Migrating from Firebase
 
-Serve Mobile no longer supports Firebase. Here is a list of events previously tracked in Firebase and how to implement them in GTM.
+Serve App no longer supports Firebase. Here is a list of events previously tracked in Firebase and how to implement them in GTM.
 
 Firebase Event | GTM Implementation
 --- | ---
@@ -210,8 +210,8 @@ screen_view | Listen for pageview changes with GTM
 session_start | _Not Supported_
 User | _Not Supported_
 
-## Adding Serve Mobile Tracking
+## Adding Serve App Tracking
 
-If you use these templates for integrating tracking into Serve web today, the simplest path to adding support for Serve Mobile is to remove all existing tags, triggers and templates related to older versions of these instructions and import one of the container configurations above.
+If you use these templates for integrating tracking into Serve web today, the simplest path to adding support for Serve App is to remove all existing tags, triggers and templates related to older versions of these instructions and import one of the container configurations above.
 
-If that is not an option, the best place to start is [adding platform variables](#3-add-platform-variables-optional), filtering existing tags to only apply to Serve web, and then adding additional triggers and tags for each Serve Mobile platform.
+If that is not an option, the best place to start is [adding platform variables](#3-add-platform-variables-optional), filtering existing tags to only apply to Serve web, and then adding additional triggers and tags for each Serve App platform.
