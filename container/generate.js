@@ -85,23 +85,23 @@ function filter(json, ...strs) {
     json = removeUAID(json);
 
     // All
-    await writeContainer(filter(json, 'Olo Serve'), 'all');
+    // await writeContainer(filter(json, 'Olo Serve'), 'all');
 
     // GA4 All
-    await writeContainer(filter(json, '- GA4', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ga4-all');
+    await writeContainer(filter(json, '- GA4', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ga4-all-platforms');
     // GA4 Web
-    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
+    await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - Web', 'Olo Serve - DOM Ready'), 'ga4-web');
     // GA4 iOS
     await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - iOS', 'Olo Serve - DOM Ready'), 'ga4-ios');
     // GA4 Android
     await writeContainer(filter(json, 'GA4 - Ecommerce', 'Olo Serve - Is', 'Integration - GA4', 'Olo Serve - GA4 - Android', 'Olo Serve - DOM Ready'), 'ga4-android');
 
     // UA All
-    await writeContainer(filter(json, '- UA', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ua-all');
+    await writeContainer(filter(json, '- UA', 'Olo Serve - Is', 'Olo Serve - DOM Ready'), 'ua-all-platforms');
     // UA Web
-    await writeContainer(filter(json, 'UA - Google Analytics', 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
+    await writeContainer(filter(json, 'UA - Web - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - Web', 'Olo Serve - DOM Ready'), 'ua-web');
     // UA iOS
-    await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - iOS', 'Olo Serve - DOM Ready'), 'ua-ios');
+    await writeContainer(filter(json, 'UA - iOS - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - iOS', 'Olo Serve - DOM Ready'), 'ua-ios');
     // UA Android
-    await writeContainer(filter(json, 'UA - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - Android', 'Olo Serve - DOM Ready'), 'ua-android');
+    await writeContainer(filter(json, 'UA - Android - Google Analytics', 'Olo Serve - Is', 'Integration - UA', 'Olo Serve - UA - Android', 'Olo Serve - DOM Ready'), 'ua-android');
 })();
