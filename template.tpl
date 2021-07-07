@@ -444,7 +444,7 @@ function mapTransactionToDataLayer(order, orderSubmission) {
       tax: order.vendorTax,
       shipping: order.deliveryCharge,
       currency: getVendor().currency,
-      coupon: orderSubmission.basket.coupon.code,
+      coupon: orderSubmission.basket.coupon ? orderSubmission.basket.coupon.code : '',
       items: combineMatchingBasketProductsForEcommerce(
         order.basketProducts.map(mapBasketProduct), 'item_id'
       )
@@ -459,7 +459,7 @@ function mapTransactionToDataLayer(order, orderSubmission) {
           revenue: order.subTotal,
           tax: order.vendorTax,
           shipping: order.deliveryCharge,
-          coupon: orderSubmission.basket.coupon.code
+          coupon: orderSubmission.basket.coupon ? orderSubmission.basket.coupon.code : ''
         },
         products: combineMatchingBasketProductsForEcommerce(
           order.basketProducts.map(mapBasketProductUA)
