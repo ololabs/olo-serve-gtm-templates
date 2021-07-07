@@ -7,3 +7,5 @@ versions:
     changeNotes: Updates transaction template to pass vendorName for affiliation instead of deliveryMode.
   - sha: 5ef1944c682a27980100de3a2fa2ee76e690ba86
     changeNotes: Adds GA4 support. Fixes UA events with incorrect event names.
+  - sha: 27177a3ff1b202c31e6aec38ea1a21ea9e4e6397
+    changeNotes: Fixes bug with transactions without coupons throwing error.
