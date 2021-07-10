@@ -197,18 +197,20 @@ app_remove | _Not Supported_
 app_update | _Not Supported_
 BasketCreationError | _Not Supported_
 CardScan | _Not Supported_
-CreateBasket | _Not Supported_
+CreateBasket | Available as a Serve Global Event `v1.createBasket`<sup>†</sup>
 ecommerce_purchase | Serve's `purchase` event
 Favorite | Listen for clicks to the favorite button with GTM
 Feedback | Listen for clicks to the feedback button with GTM
-first_open | _Not Supported_
-Location | _Not Supported_
+first_open | Available as a Serve Global Event `v1.appFirstOpen`<sup>†</sup>
+Location | Available as a Serve Global Event `v1.locationAccessAllowed` and `v1.locationAccessDenied`<sup>†</sup>
 LoginView | Listen for pageview changes with GTM
 MainMenu | Listen for clicks to the menu button with GTM
 os_update | _Not Supported_
 screen_view | Listen for pageview changes with GTM
 session_start | _Not Supported_
-User | _Not Supported_
+User | Serve's `userLogin` event
+
+<small>_<sup>†</sup> Some events are not directly supported by these templates because there is no Google Analytics equivalent event. They can be manually integrated by leveraging the dataLayer, tags and triggers. Read more about how to integrate with these events in [Olo Serve Global Data and Events](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)._</small>
 
 ## Adding Serve App Tracking
 
