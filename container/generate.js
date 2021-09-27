@@ -38,11 +38,12 @@ function removeFolders(json) {
 }
 
 function removeUAID(json) {
-    const ga = json.containerVersion.variable.find(v => v.type === 'gas');
-    if (ga) {
-        const param = ga.parameter.find(p => p.key === 'trackingId');
-        if (param) param.value = 'UA-000000-0';
-    }
+    json.containerVersion.variable
+        .filter(v => v.type === 'gas')
+        .forEach(ga => {
+            const param = ga.parameter.find(p => p.key === 'trackingId');
+            if (param) param.value = 'UA-000000-0';
+        });
     return json;
 }
 
