@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2021-09-27 15:30:19",
+    "exportTime": "2021-09-28 13:58:46",
     "containerVersion": {
         "path": "",
         "accountId": "0000000000",
@@ -2170,6 +2170,42 @@
                         "value": "false"
                     },
                     {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "checkProtocolTask"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "checkStorageTask"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "type": "BOOLEAN",
                         "key": "useHashAutoLink",
                         "value": "false"
@@ -2195,7 +2231,7 @@
                         "value": "UA-000000-0"
                     }
                 ],
-                "fingerprint": "1625619253928",
+                "fingerprint": "1632837511610",
                 "parentFolderId": "21"
             },
             {
@@ -2381,7 +2417,7 @@
             }
         ],
         "builtInVariable": [],
-        "fingerprint": "1632756619330",
+        "fingerprint": "1632837526678",
         "tagManagerUrl": "",
         "customTemplate": [
             {
