@@ -16,6 +16,8 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Jan 19th, 2022
+  * Call out - GA4 is not supported for Serve Apps. This is due to Google not supporting GA4 on Hybrid Apps (https://issuetracker.google.com/issues/174954288)
 
 * June 10, 2021
   * Added GA4 support
@@ -26,7 +28,7 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 
 ## Simple Setup
 
-The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups, and they support either GA4 or Universal Analytics. Additionally, they can be used to configure Serve App analytics for iOS and Android.
+The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups, and they support either GA4 or Universal Analytics. Additionally, they can be used to configure Serve App analytics for iOS and Android. However, only UA is currently supported for the app.
 
 If you are worried about importing a configuration conflicting with your existing GTM setup, follow one of the manual setup instructions below.
 
@@ -37,7 +39,7 @@ To import a container configuration, open your GTM container and navigate to the
 ![GTM Workspace Overview](./images/simple/1.1-start.png)
 ![GTM Admin](./images/simple/1.2-admin.png)
 
-Select one of the JSON configuration [downloaded from our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container) that best suits your needs. In most cases, this will be `olo-serve-container-configuration-ga4-web.json` as it leverages GA4 and only contains tracking for Serve web. If you are using Serve App for apps, you downloading `olo-serve-container-configuration-ga4-all-platforms.json` would be a better choice.
+Select one of the JSON configuration [downloaded from our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container) that best suits your needs. In most cases, this will be `olo-serve-container-configuration-ga4-web.json` as it leverages GA4 and only contains tracking for Serve web. If you are using Serve App for apps, you downloading `olo-serve-container-configuration-UA-all-platforms.json` would be a better choice, since only UA is supported on the apps. You should also feel free to configure GA4 for the Web and UA for the app. 
 
 You can choose which workspace to import the configuration to, and whether or not to merge or overwrite existing tags.
 
