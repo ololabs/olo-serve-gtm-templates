@@ -16,6 +16,9 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Jul 1, 2023
+  *  [Google Analytics 4 has replaced Universal Analytics](https://support.google.com/analytics/answer/11583528?hl=en)
+ 
 * Jan 19th, 2022
   * Call out - GA4 is not supported for Serve Apps. This is due to Google not supporting GA4 on Hybrid Apps (https://issuetracker.google.com/issues/174954288)
 
