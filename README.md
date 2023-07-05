@@ -31,7 +31,7 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 
 ## Simple Setup
 
-The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups, and they support either GA4 or Universal Analytics. Additionally, they can be used to configure Serve App analytics for iOS and Android.
+The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups. Additionally, they can be used to configure Serve App analytics for iOS and Android.
 
 If you are worried about importing a configuration conflicting with your existing GTM setup, follow one of the manual setup instructions below.
 
