@@ -16,6 +16,9 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Jul 1, 2023
+  *  [Google Analytics 4 has replaced Universal Analytics](https://support.google.com/analytics/answer/11583528?hl=en)
+ 
 * Jan 19th, 2022
   * Call out - GA4 is not supported for Serve Apps. This is due to Google not supporting GA4 on Hybrid Apps (https://issuetracker.google.com/issues/174954288)
 
@@ -28,7 +31,7 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 
 ## Simple Setup
 
-The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups, and they support either GA4 or Universal Analytics. Additionally, they can be used to configure Serve App analytics for iOS and Android. However, only UA is currently supported for the app.
+The fastest way to get started with Olo Serve and GTM is to [import a container configuration](https://support.google.com/tagmanager/answer/6106997?hl=en#import) from [our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container). This will install the Olo Serve GTM templates and add the appropriate triggers, variables, and tags to track interactions with Serve via Google Analytics. The configurations are ideal for new or existing GTM setups. Additionally, they can be used to configure Serve App analytics for iOS and Android.
 
 If you are worried about importing a configuration conflicting with your existing GTM setup, follow one of the manual setup instructions below.
 
@@ -39,25 +42,16 @@ To import a container configuration, open your GTM container and navigate to the
 ![GTM Workspace Overview](./images/simple/1.1-start.png)
 ![GTM Admin](./images/simple/1.2-admin.png)
 
-Select one of the JSON configuration [downloaded from our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container) that best suits your needs. In most cases, this will be `olo-serve-container-configuration-ga4-web.json` as it leverages GA4 and only contains tracking for Serve web. If you are using Serve App for apps, you downloading `olo-serve-container-configuration-UA-all-platforms.json` would be a better choice, since only UA is supported on the apps. You should also feel free to configure GA4 for the Web and UA for the app. 
+Select one of the JSON configuration [downloaded from our Github repository](https://github.com/ololabs/olo-serve-gtm-templates/tree/main/container) that best suits your needs. In most cases, this will be `olo-serve-container-configuration-ga4-web.json` as it leverages GA4 and only contains tracking for Serve web.
 
 You can choose which workspace to import the configuration to, and whether or not to merge or overwrite existing tags.
 
 ![GTM Import Container](./images/simple/1.3-import.png)
 
 ### 2. Configure Google Analytics
-
-Google Analytics must be configured to receive data from GTM events. How you do this depends on whether or not you are using Universal Analytics (UA) or GA4 tracking.
-
 #### 2a. Add Google Analytics 4 configuration
 
 If you are using GA4, instead of editing a variable you need to update a tag. Edit the GA4 Configuration tag and set the Measurement ID. 
-
-#### 2b. Update Universal Analytics tracking ID
-
-Although UA is officially deprecated, many brands still use it to track their data. If you imported a UA configuration, you must configure the Serve Google Analytics Settings variable. Add your account's UA to the Tracking ID field.
-
-![GTM UA settings](./images/simple/2a.1-ua.png)
 
 ![GTM GA4 settings](./images/simple/2b.1-ga4.png)
 
@@ -72,10 +66,6 @@ Once you have configured Google Analytics, preview your new GTM setup and inspec
 ![GA4 GA debugger output](./images/simple/3.4-ga4-debugger.png)
 ![GA4 network traffic](./images/simple/3.5-ga4-network.png)
 
-#### 3b. Universal Analytics
-
-![UA GA debugger output](./images/simple/3.2-ua-debugger.png)
-![UA network traffic](./images/simple/3.3-ua-network.png)
 ## Manual Setup
 
 If using the pre-built container configuration is not desireable for any reason, you can still take advantage of this template by setting it up manually.
@@ -94,7 +84,7 @@ To start using the Olo Serve GTM template, import it from the Community Template
 
 The Olo Serve Template is a custom tag that listens for changes in Serve, and then emits `dataLayer` events that can be used as triggers in GTM.
 
-You can configure the template to work with Google Analytics 4, Universal Analytics, or Legacy ga.js analytics.
+You can configure the template to work with Google Analytics 4 analytics.
 
 You can find the installed Olo Serve tag under "Custom".
 
@@ -112,9 +102,10 @@ By selecting GA4, the `dataLayer` events will match the [GA4 Developer's Guide s
 
 #### 2b. Universal Analytics
 
-By selecting UA, the `dataLayer` events will match the [Enhanced Ecommerce Developer's Guide specifications](https://developers.google.com/tag-manager/enhanced-ecommerce).
+*Deprecated*
 
-![Olo Serve GTM Template UA](./images/manual/2.5.png)
+[Starting July 1, 2023, standard UA properties will stop processing data.](https://support.google.com/analytics/answer/11583528?sjid=11219345295374351901-EU)
+
 #### 2c. Legacy ga.js Analytics
 
 *Deprecated*
@@ -133,7 +124,7 @@ If you want to track Serve web and Serve App events separately, you need to rout
 
 ### 4. Add triggers
 
-Before you add tags for sending data to GA, you need to add triggers that will be fired when an event is pushed to the `dataLayer` from Serve. The names of the events to listen for depend on if you are using GA4 or UA. A full list of event names are available in the [GA4 Developer's Guide specifications](https://developers.google.com/tag-manager/ecommerce-ga4) or the [Enhanced Ecommerce Developer's Guide specifications](https://developers.google.com/tag-manager/enhanced-ecommerce).
+Before you add tags for sending data to GA, you need to add triggers that will be fired when an event is pushed to the `dataLayer` from Serve. A full list of event names are available in the [GA4 Developer's Guide specifications](https://developers.google.com/tag-manager/ecommerce-ga4).
 
 ![GTM triggers](./images/manual/4.1.png)
 ![Choose trigger type](./images/manual/4.2.png)
@@ -147,7 +138,7 @@ If you are using Serve App, you need to differentiate between data from the web 
 
 ### 5. Add tags
 
-Adding Google Analytics tags and wiring them to triggers is the final step in taking data from Serve and sending it to Google Analytics. How this is done differs slightly between GA4 and UA.
+Adding Google Analytics tags and wiring them to triggers is the final step in taking data from Serve and sending it to Google Analytics.
 
 ![GTM tags](./images/manual/5.1.png)
 
@@ -162,18 +153,6 @@ You must define the event parameters as defined in the [GA4 Developer's Guide sp
 ![Ecommerce items variable](./images/manual/5.5.png)
 
 For the full list of tag configurations, see each "Tag configuration for this example" section in the [GA4 Developer's Guide specifications](https://developers.google.com/tag-manager/ecommerce-ga4).
-
-#### 5b. Universal Analytics
-
-![Add UA event](./images/manual/5.6.png)
-
-You must define the event parameters as defined in the [Enhanced Ecommerce Developer's Guide specifications](https://developers.google.com/tag-manager/enhanced-ecommerce).
-
-![Add add_to_cart event](./images/manual/5.7.png)
-![Add add_to_cart event](./images/manual/5.8.png)
-![Add add_to_cart event](./images/manual/5.9.png)
-
-For the full list of tag configurations, see each "Tag configuration for this example" section in the [Enhanced Ecommerce Developer's Guide specifications](https://developers.google.com/tag-manager/enhanced-ecommerce).
 
 ## Available Events
 

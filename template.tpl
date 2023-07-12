@@ -44,7 +44,7 @@ ___TEMPLATE_PARAMETERS___
       },
       {
         "value": "ua",
-        "displayValue": "Universal Analytics"
+        "displayValue": "Universal Analytics (Deprecated)"
       },
       {
         "value": "legacy",
@@ -84,11 +84,6 @@ ___TEMPLATE_PARAMETERS___
             "paramName": "compat",
             "paramValue": "ga4",
             "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
-            "type": "EQUALS"
           }
         ]
       },
@@ -101,11 +96,6 @@ ___TEMPLATE_PARAMETERS___
           {
             "paramName": "compat",
             "paramValue": "ga4",
-            "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
             "type": "EQUALS"
           }
         ]
@@ -120,11 +110,6 @@ ___TEMPLATE_PARAMETERS___
             "paramName": "compat",
             "paramValue": "ga4",
             "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
-            "type": "EQUALS"
           }
         ]
       },
@@ -137,11 +122,6 @@ ___TEMPLATE_PARAMETERS___
           {
             "paramName": "compat",
             "paramValue": "ga4",
-            "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
             "type": "EQUALS"
           }
         ]
@@ -156,11 +136,6 @@ ___TEMPLATE_PARAMETERS___
             "paramName": "compat",
             "paramValue": "ga4",
             "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
-            "type": "EQUALS"
           }
         ]
       },
@@ -173,11 +148,6 @@ ___TEMPLATE_PARAMETERS___
           {
             "paramName": "compat",
             "paramValue": "ga4",
-            "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
             "type": "EQUALS"
           }
         ]
@@ -192,11 +162,6 @@ ___TEMPLATE_PARAMETERS___
             "paramName": "compat",
             "paramValue": "ga4",
             "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
-            "type": "EQUALS"
           }
         ]
       },
@@ -209,11 +174,6 @@ ___TEMPLATE_PARAMETERS___
           {
             "paramName": "compat",
             "paramValue": "ga4",
-            "type": "EQUALS"
-          },
-          {
-            "paramName": "compat",
-            "paramValue": "ua",
             "type": "EQUALS"
           }
         ]
@@ -305,31 +265,12 @@ function mapProduct(product) {
   };
 }
 
-function mapProductUA(product) {
-  return {
-    name: product.name,
-    id: product.id,
-    price: product.baseCost || 0.0,
-    category: product.category.name
-  };
-}
-
 function mapBasketProduct(bp) {
   return {
     item_name: bp.productName,
     item_id: bp.product.id,
     price: bp.unitCost || 0.0,
     item_category: bp.categoryName,
-    quantity: bp.quantity
-  };
-}
-
-function mapBasketProductUA(bp) {
-  return {
-    name: bp.productName,
-    id: bp.product.id,
-    price: bp.unitCost || 0.0,
-    category: bp.categoryName,
     quantity: bp.quantity
   };
 }
@@ -391,69 +332,41 @@ function getVendor() {
 }
 
 function mapAddToCartToDataLayer(product) {
-  return isGa4() ? {
+  return {
     event: 'add_to_cart',
     ecommerce: {
       items: [mapBasketProduct(product)]
-    }
-  } : {
-    event: 'addToCart',
-    ecommerce: {
-      currencyCode: getVendor().currency,
-      add: {
-        products: [mapBasketProductUA(product)]
-      }
     }
   };
 }
 
 function mapRemoveFromCartToDataLayer(product) {
-  return isGa4() ? {
+  return {
     event: 'remove_from_cart',
     ecommerce: {
       items: [mapBasketProduct(product)]
-    }
-  } : {
-    event: 'removeFromCart',
-    ecommerce: {
-      currencyCode: getVendor().currency,
-      remove: {
-        products: [mapBasketProductUA(product)]
-      }
     }
   };
 }
 
 function mapCheckoutToDataLayer(basket, cb) {
-  if (isGa4()) {
-    // Serve exposes a "done" callback because UA depends on it
-    // The idea is that the page shouldn't transition until the analytics
-    // are done running. You can see below how UA consumes this.
-    // GA4 doesn't have an `eventCallback` parameter, but we want
-    // to let Serve know we are done doing our tracking and it can
-    // move along ASAP. `callLater` is the same as `setTimeout(0)`.
-    callLater(cb);
-    return {
-      event: 'begin_checkout',
-      ecommerce: {
-        items: basket.basketProducts.map(mapBasketProduct)
-      }
-    };
-  }
+  // Serve exposes a "done" callback because UA depends on it
+  // The idea is that the page shouldn't transition until the analytics
+  // are done running.
+  // GA4 doesn't have an `eventCallback` parameter, but we want
+  // to let Serve know we are done doing our tracking and it can
+  // move along ASAP. `callLater` is the same as `setTimeout(0)`.
+  callLater(cb);
   return {
-    event: 'checkout',
+    event: 'begin_checkout',
     ecommerce: {
-      checkout: {
-        actionField: { step: 0 },
-        products: basket.basketProducts.map(mapBasketProductUA)
-      },
-      eventCallback: cb || function() {}
+      items: basket.basketProducts.map(mapBasketProduct)
     }
   };
 }
 
 function mapTransactionToDataLayer(order, orderSubmission) {
-  return isGa4() ? {
+  return {
     event: 'purchase',
     ecommerce: {
       transaction_id: order.displayId,
@@ -467,71 +380,32 @@ function mapTransactionToDataLayer(order, orderSubmission) {
         order.basketProducts.map(mapBasketProduct), 'item_id'
       )
     }
-  } : {
-    event: 'purchase',
-    ecommerce: {
-      purchase: {
-        actionField: {
-          id: order.displayId,
-          affiliation: order.vendorName,
-          revenue: order.subTotal,
-          tax: order.vendorTax,
-          shipping: order.deliveryCharge,
-          coupon: orderSubmission.basket.coupon ? orderSubmission.basket.coupon.code : ''
-        },
-        products: combineMatchingBasketProductsForEcommerce(
-          order.basketProducts.map(mapBasketProductUA)
-        )
-      }
-    }
   };
 }
 
 function mapClickProductToDataLayer(product, clickFrom) {
-  return isGa4() ? {
+  return {
     event: 'select_item',
     ecommerce: {
       items: [mapProduct(product)]
-    }
-  } : {
-    event: 'productClick',
-    ecommerce: {
-      click: {
-        actionField: {list: clickFrom},
-        products: [mapProductUA(product)]
-      }
     }
   };
 }
 
 function mapViewProductDetailToDataLayer(product, viewIn) {
-  return isGa4() ? {
+  return {
     event: 'view_item',
     ecommerce: {
       items: [mapProduct(product)]
-    }
-  } : {
-    event: 'detail',
-    ecommerce: {
-      detail: {
-        actionField: {list: viewIn},
-        products: [mapProductUA(product)]
-      }
     }
   };
 }
 
 function mapProductsVisibleToDataLayer(products) {
-  return isGa4() ? {
+  return {
     event: 'view_item_list',
     ecommerce: {
       items: products.map(mapProduct)
-    }
-  } : {
-    event: 'impressions',
-    ecommerce: {
-      currencyCode: getVendor().currency,
-      impressions: products.map(mapProductUA)
     }
   };
 }
@@ -808,14 +682,7 @@ scenarios:
       assertApi('gtmOnSuccess').wasCalled();
     });
 - name: Add to cart
-  code: "test('it adds to cart UA', function(run) {\n  const t = run({'v1.addToCart':\
-    \ true, 'compat': 'ua'});\n\n  t.callbacks['v1.addToCart'](mockBasketProduct);\n\
-    \  log(t.dataLayer[1]);\n  // Verify that the dataLayer received the right stuff\n\
-    \  \n  assertThat(t.dataLayer[1]).isEqualTo({\n    event: 'addToCart',\n    ecommerce:\
-    \ {\n      currencyCode: 'USD',\n      add: {                                \n\
-    \        products: [{                       \n          name: 'Test Product',\n\
-    \          id: 1234,\n          price: 15.87,\n          category: 'Pasta',\n\
-    \          quantity: 2\n        }]\n      }\n    }\n  });\n});\n\ntest('it adds\
+  code: "test('it adds\
     \ to cart GA4', function(run) {\n  const t = run({'v1.addToCart': true, 'compat':\
     \ 'ga4'});\n\n  t.callbacks['v1.addToCart'](mockBasketProduct);\n  \n  // Verify\
     \ that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
@@ -824,14 +691,7 @@ scenarios:
     \ price: 15.87,\n        item_category: 'Pasta',\n        quantity: 2\n      }]\n\
     \    }\n  });\n});"
 - name: Remove from cart
-  code: "test('it removes from cart UA', function(run) {\n  const t = run({'v1.removeFromCart':\
-    \ true, 'compat': 'ua'});\n\n  t.callbacks['v1.removeFromCart'](mockBasketProduct);\n\
-    \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
-    \    event: 'removeFromCart',\n    ecommerce: {\n      currencyCode: 'USD',\n\
-    \      remove: {                                \n        products: [{       \
-    \                \n          name: 'Test Product',\n          id: 1234,\n    \
-    \      price: 15.87,\n          category: 'Pasta',\n          quantity: 2\n  \
-    \      }]\n      }\n    }\n  });\n});\n\ntest('it removes from cart GA4', function(run)\
+  code: "test('it removes from cart GA4', function(run)\
     \ {\n  const t = run({'v1.removeFromCart': true, 'compat': 'ga4'});\n\n  t.callbacks['v1.removeFromCart'](mockBasketProduct);\n\
     \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
     \    event: 'remove_from_cart',\n    ecommerce: {\n      items: [{           \
@@ -839,14 +699,7 @@ scenarios:
     \      price: 15.87,\n        item_category: 'Pasta',\n        quantity: 2\n \
     \     }]\n    }\n  });\n});"
 - name: Checkout
-  code: "test('it handles checkout UA', function(run) {\n  const t = run({'v1.checkout':\
-    \ true, 'compat': 'ua'});\n\n  t.callbacks['v1.checkout'](mockBasket, noop);\n\
-    \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
-    \    event: 'checkout',\n    ecommerce: {\n      checkout: {  \n        actionField:\
-    \ { step: 0 },\n        products: [{                       \n          name: 'Test\
-    \ Product',\n          id: 1234,\n          price: 15.87,\n          category:\
-    \ 'Pasta',\n          quantity: 2\n        }]\n      },\n      eventCallback:\
-    \ noop\n    }\n  });\n});\n\ntest('it handles checkout GA4', function(run) {\n\
+  code: "test('it handles checkout GA4', function(run) {\n\
     \  const t = run({'v1.checkout': true, 'compat': 'ga4'});\n\n  t.callbacks['v1.checkout'](mockBasket,\
     \ noop);\n\n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
     \    event: 'begin_checkout',\n    ecommerce: {\n      items: [{             \
@@ -854,17 +707,7 @@ scenarios:
     \    price: 15.87,\n        item_category: 'Pasta',\n        quantity: 2\n   \
     \   }]\n    }\n  });\n});"
 - name: Purchase
-  code: "test('it handles transaction UA', function(run) {\n  const t = run({'v1.transaction':\
-    \ true, 'compat': 'ua'});\n\n  t.callbacks['v1.transaction'](mockOrder, mockOrderSubmission);\n\
-    \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
-    \    event: 'purchase',\n    ecommerce: {\n      purchase: {  \n        actionField:\
-    \ {\n          id: 'asdf',\n          affiliation: \"Fakes's Tavern\",\n     \
-    \     revenue: 14.98,\n          tax: 0.72,\n          shipping: 5.99,\n     \
-    \     coupon: 'FREEBIE'\n        },\n        products: [{\n          name: 'Test\
-    \ Product',\n          id: 1234,\n          price: 17.93,\n          category:\
-    \ 'Pasta',\n          quantity: 5\n        }, {\n          name: 'Test Product\
-    \ 2',\n          id: 1235,\n          price: 3.99,\n          category: 'Pasta',\n\
-    \          quantity: 1\n        }]\n      }\n    }\n  });\n});\n\ntest('it handles\
+  code: "test('it handles\
     \ transaction GA4', function(run) {\n  const t = run({'v1.transaction': true,\
     \ 'compat': 'ga4'});\n\n  t.callbacks['v1.transaction'](mockOrder, mockOrderSubmission);\n\
     \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
@@ -913,14 +756,7 @@ scenarios:
       });
     });
 - name: Click product link
-  code: "test('it handles clicking a product link UA', function(run) {\n  const t\
-    \ = run({'v1.clickProductLink': true, 'compat': 'ua'});\n\n  t.callbacks['v1.clickProductLink'](mockProduct,\
-    \ 'vendor-menu');\n\n  // Verify that the dataLayer received the right stuff\n\
-    \  assertThat(t.dataLayer[1]).isEqualTo({\n    event: 'productClick',\n    ecommerce:\
-    \ {\n      click: {  \n        actionField: { list: 'vendor-menu' },\n       \
-    \ products: [{                       \n          name: 'Test Product',\n     \
-    \     id: 1234,\n          price: 15.99,\n          category: 'Test Category'\n\
-    \        }]\n      }\n    }\n  });\n});\n\ntest('it handles clicking a product\
+  code: "test('it handles clicking a product\
     \ link GA4', function(run) {\n  const t = run({'v1.clickProductLink': true, 'compat':\
     \ 'ga4'});\n\n  t.callbacks['v1.clickProductLink'](mockProduct, 'vendor-menu');\n\
     \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
@@ -929,13 +765,7 @@ scenarios:
     \ price: 15.99,\n        item_category: 'Test Category'\n      }]\n    }\n  });\n\
     });"
 - name: View product details
-  code: "test('it handles viewing product details UA', function(run) {\n  const t\
-    \ = run({'v1.viewProductDetail': true, 'compat': 'ua'});\n\n  t.callbacks['v1.viewProductDetail'](mockProduct,\
-    \ 'modal');\n\n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
-    \    event: 'detail',\n    ecommerce: {\n      detail: {  \n        actionField:\
-    \ { list: 'modal' },\n        products: [{                       \n          name:\
-    \ 'Test Product',\n          id: 1234,\n          price: 15.99,\n          category:\
-    \ 'Test Category'\n        }]\n      }\n    }\n  });\n});\n\ntest('it handles\
+  code: "test('it handles\
     \ viewing product details GA4', function(run) {\n  const t = run({'v1.viewProductDetail':\
     \ true, 'compat': 'ga4'});\n\n  t.callbacks['v1.viewProductDetail'](mockProduct,\
     \ 'modal');\n\n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
@@ -943,13 +773,7 @@ scenarios:
     \     \n        item_name: 'Test Product',\n        item_id: 1234,\n        price:\
     \ 15.99,\n        item_category: 'Test Category'\n      }]\n    }\n  });\n});"
 - name: Products visible
-  code: "test('it handles an impression on a product UA', function(run) {\n  const\
-    \ t = run({'v1.productsVisible': true, 'compat': 'ua'});\n\n  t.callbacks['v1.productsVisible']([mockProduct]);\n\
-    \n  // Verify that the dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
-    \    event: 'impressions',\n    ecommerce: {\n      currencyCode: 'USD',\n   \
-    \   impressions: [{                       \n        name: 'Test Product',\n  \
-    \      id: 1234,\n        price: 15.99,\n        category: 'Test Category'\n \
-    \     }]\n    }\n  });\n});\n\ntest('it handles an impression on a product GA4',\
+  code: "test('it handles an impression on a product GA4',\
     \ function(run) {\n  const t = run({'v1.productsVisible': true, 'compat': 'ga4'});\n\
     \n  t.callbacks['v1.productsVisible']([mockProduct]);\n\n  // Verify that the\
     \ dataLayer received the right stuff\n  assertThat(t.dataLayer[1]).isEqualTo({\n\
