@@ -16,6 +16,9 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Aug 2, 2023
+  * There is a bug in reporting the revenue in Google Analytics resulting in the Revenue being inconsistently captured. We have not identified a work around for this. (https://support.google.com/analytics/thread/116545705/ga4-product-revenue-not-populating?hl=en)
+
 * Jul 1, 2023
   *  [Google Analytics 4 has replaced Universal Analytics](https://support.google.com/analytics/answer/11583528?hl=en)
  
