@@ -16,6 +16,9 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Dec 12, 2023
+  * Adding missing measurementIdOverride key that was causing issues while importing the container.
+
 * Aug 29, 2023
   * Prior to this date, Dispatch orders were not reporting revenue in GA4. This has been fixed on the application side, no action is required.
   
@@ -55,11 +58,10 @@ You can choose which workspace to import the configuration to, and whether or no
 ![GTM Import Container](./images/simple/1.3-import.png)
 
 ### 2. Configure Google Analytics
-#### 2a. Add Google Analytics 4 configuration
 
-If you are using GA4, instead of editing a variable you need to update a tag. Edit the GA4 Configuration tag and set the Measurement ID. 
+Go through each Olo Serve Tag and replace `G-000000` with your GA4 [Measurement ID](https://support.google.com/analytics/answer/12270356?hl=en). 
 
-![GTM GA4 settings](./images/simple/2b.1-ga4.png)
+![GTM GA4 settings](./images/simple/2b.1a-ga4.png)
 
 ### 3. Verify data is flowing to Google Analytics
 
