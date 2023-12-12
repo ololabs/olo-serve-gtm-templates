@@ -16,6 +16,9 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Dec 12, 2023
+  * Adding missing measurementIdOverride key that was causing issues while importing the container.
+
 * Aug 29, 2023
   * Prior to this date, Dispatch orders were not reporting revenue in GA4. This has been fixed on the application side, no action is required.
   
