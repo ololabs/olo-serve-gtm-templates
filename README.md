@@ -55,11 +55,10 @@ You can choose which workspace to import the configuration to, and whether or no
 ![GTM Import Container](./images/simple/1.3-import.png)
 
 ### 2. Configure Google Analytics
-#### 2a. Add Google Analytics 4 configuration
 
-If you are using GA4, instead of editing a variable you need to update a tag. Edit the GA4 Configuration tag and set the Measurement ID. 
+Go through each Olo Serve Tag and replace `G-000000` with your GA4 [Measurement ID](https://support.google.com/analytics/answer/12270356?hl=en). 
 
-![GTM GA4 settings](./images/simple/2b.1-ga4.png)
+![GTM GA4 settings](./images/simple/2b.1a-ga4.png)
 
 ### 3. Verify data is flowing to Google Analytics
 
