@@ -16,6 +16,9 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
 ## Changelog
+* Oct 3, 2024
+  * Adding missing measurementIdOverride key, for the rest of the templates, that was causing issues while importing the container. 
+
 * Dec 12, 2023
   * Adding missing measurementIdOverride key that was causing issues while importing the container.
 
