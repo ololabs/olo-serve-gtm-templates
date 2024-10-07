@@ -93,6 +93,11 @@
                         "value": "add_to_cart"
                     },
                     {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
+                    },
+                    {
                         "type": "LIST",
                         "key": "eventParameters",
                         "list": [
@@ -145,6 +150,11 @@
                         "value": "begin_checkout"
                     },
                     {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
+                    },
+                    {
                         "type": "LIST",
                         "key": "eventParameters",
                         "list": [
@@ -195,6 +205,11 @@
                         "type": "TEMPLATE",
                         "key": "eventName",
                         "value": "purchase"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
                     },
                     {
                         "type": "LIST",
@@ -354,6 +369,11 @@
                         "value": "remove_from_cart"
                     },
                     {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
+                    },
+                    {
                         "type": "LIST",
                         "key": "eventParameters",
                         "list": [
@@ -404,6 +424,11 @@
                         "type": "TEMPLATE",
                         "key": "eventName",
                         "value": "select_item"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
                     },
                     {
                         "type": "LIST",
@@ -458,6 +483,11 @@
                         "value": "view_item"
                     },
                     {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
+                    },
+                    {
                         "type": "LIST",
                         "key": "eventParameters",
                         "list": [
@@ -508,6 +538,11 @@
                         "type": "TEMPLATE",
                         "key": "eventName",
                         "value": "view_item_list"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-000000"
                     },
                     {
                         "type": "LIST",
