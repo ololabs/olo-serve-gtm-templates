@@ -15,6 +15,13 @@ The easiest way to integrate Google Tag Manager (and Google Analytics) with Olo 
 
 [Read more about Olo Serve's global data and events here.](https://olosupport.zendesk.com/hc/en-us/article_attachments/360094400872/Olo_Serve_Global_Data_and_Events.pdf)
 
+**Important: Serve Apps Use Web GTM Containers. Serve mobile apps (iOS and Android) use WEB GTM containers, NOT native iOS or Android containers.**
+
+Serve apps are built with CapacitorJS, a hybrid framework that runs web content inside a native shell. Because of this:
+- All platforms (web, iOS, Android) use the same **Web GTM container**
+- Platform detection happens automatically via `window.Olo.data.device` properties
+- **Do NOT create native iOS or Android GTM containers** - they will not work with Serve
+
 ## Changelog
 * Oct 3, 2024
   * Adding missing measurementIdOverride key, for the rest of the templates, that was causing issues while importing the container. 
@@ -125,10 +132,14 @@ This only supports the transaction event and is only included for backwards comp
 
 ### 3. Add platform variables (optional)
 
-If you want to track Serve web and Serve App events separately, you need to route data from GTM to more than one Google Analytics account. This is covered in more detail under [Add Tags](#5-add-tags), but a prerequisite is to add variables to differentiate between platform. These variables key off device information exposed by Serve.
+If you want to track Serve web and Serve App events separately, you need to route data from GTM to more than one Google Analytics account. This is covered in more detail under [Add Tags](#5-add-tags), but a prerequisite is to add variables to differentiate between platform.
+
+Serve exposes device information globally at `window.Olo.data.device` with the following properties:
+- `Olo.data.device.isHybrid` - Returns `false` for web, `true` for mobile apps
+- `Olo.data.device.isHybridAndroid` - Returns `true` for Android app, `false` otherwise
+- `Olo.data.device.isHybridIOS` - Returns `true` for iOS app, `false` otherwise
 
 ![GTM variables](./images/manual/3.1.png)
-
 ![Adding Is Web? variable](./images/manual/3.2.png)
 ![Adding Is iOS? variable](./images/manual/3.3.png)
 ![Adding Is Android? variable](./images/manual/3.4.png)
